@@ -1,0 +1,17 @@
+{
+  "name": "chayka.gulpic",
+  "version": "0.0.0",
+  "description": "A setup for bulk image compression and optimization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Boris Mossounov <borix@tut.by> (https://anotherguru.me)",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-gm": "0.0.8",
+    "gulp-image": "^2.10.1"
+  }
+}
