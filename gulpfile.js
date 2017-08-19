@@ -1,4 +1,3 @@
-"strict";
 const gulp = require('gulp');
 const image = require('gulp-image');
 const clean = require('gulp-clean');
@@ -11,7 +10,7 @@ const paths = {
 
 gulp.task('image', function () {
     
-    let files = argv['batch'].split(' ').filter(f => !!f).map(f=>'./queue/'+f);
+    var files = argv['batch'].split(' ').filter(f => !!f).map(f=>'./queue/'+f);
     // console.log(files);
     gulp.src(files)
         .pipe(image({
