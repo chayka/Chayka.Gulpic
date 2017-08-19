@@ -1,3 +1,4 @@
+"strict";
 const gulp = require('gulp');
 const image = require('gulp-image');
 const clean = require('gulp-clean');
