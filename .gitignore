@@ -3,3 +3,5 @@ node_modules
 .DC_Store
 queue
 processed
+.lock
+*.log

@@ -1,24 +1,29 @@
 const gulp = require('gulp');
 const image = require('gulp-image');
 const clean = require('gulp-clean');
+const argv = require('yargs').argv;
 
 const paths = {
     src: './queue/**/*',
     dst: './processed',
 };
+
 gulp.task('image', function () {
-    gulp.src(paths.src)
+    
+    let files = argv['batch'].split(' ').filter(f => !!f).map(f=>'./queue/'+f);
+    // console.log(files);
+    gulp.src(files)
         .pipe(image({
-            pngquant: true,
-            optipng: false,
-            zopflipng: true,
-            jpegRecompress: true,
-            jpegoptim: true,
-            mozjpeg: true,
-            guetzli: true,
-            gifsicle: true,
-            svgo: true,
-            concurrent: 10
+            // pngquant: true,
+            // optipng: false,
+            // zopflipng: true,
+            // jpegRecompress: true,
+            // jpegoptim: true,
+            // mozjpeg: true,
+            // guetzli: true,
+            // gifsicle: true,
+            // svgo: true,
+            concurrent: 2
         }))
         .pipe(gulp.dest(paths.dst));
 });
