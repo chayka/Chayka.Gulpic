@@ -2,7 +2,7 @@
 logfile='compress.log'
 [ -e ${logfile} ] || touch ${logfile};
 
-arr=($(rsync -rnv --ignore-existing --exclude=*.txt --exclude-from=${logfile} queue/ processed/ | grep -v '^building file list' | grep -v '^sent' | grep -v '^total'))
+arr=($(rsync -rnv --ignore-existing --exclude=*.txt --exclude-from=${logfile} queue/ processed/ | grep -v '^building file list' | grep -v '^sending incremental file list' | grep -v '^sent' | grep -v '^total'))
 #echo ${#arr[@]}
 step=10
 total=${#arr[@]}
