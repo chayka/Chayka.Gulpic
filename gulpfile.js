@@ -20,7 +20,7 @@ gulp.task('image', function () {
             // jpegRecompress: true,
             // jpegoptim: true,
             // mozjpeg: true,
-            // guetzli: true,
+            guetzli: true,
             // gifsicle: true,
             // svgo: true,
             concurrent: 2
