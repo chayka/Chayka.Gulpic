@@ -12,7 +12,7 @@ gulp.task('image', function () {
     
     var files = argv['batch'].split(' ').filter(f => !!f);
     // console.log(files);
-    gulp.src(files, { cwd : './queue/**' })
+    gulp.src(files, { cwd : './queue/' })
         .pipe(image({
             // pngquant: true,
             // optipng: false,
