@@ -10,9 +10,9 @@ const paths = {
 
 gulp.task('image', function () {
     
-    var files = argv['batch'].split(' ').filter(f => !!f).map(f=>'./queue/'+f);
+    var files = argv['batch'].split(' ').filter(f => !!f);
     // console.log(files);
-    gulp.src(files)
+    gulp.src(files, { cwd : './queue/**' })
         .pipe(image({
             // pngquant: true,
             // optipng: false,
@@ -20,7 +20,7 @@ gulp.task('image', function () {
             // jpegRecompress: true,
             // jpegoptim: true,
             // mozjpeg: true,
-            // guetzli: true,
+            guetzli: true,
             // gifsicle: true,
             // svgo: true,
             concurrent: 2
