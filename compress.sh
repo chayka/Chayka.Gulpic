@@ -20,6 +20,7 @@ for (( i=0; i<total; i+=step )); do
 
         echo ""
         echo "#### starting batch ${i} / ${total} ####"
+        echo "batch: ${batch}"
         echo ""
 
         gulp image --batch="${batch}"
