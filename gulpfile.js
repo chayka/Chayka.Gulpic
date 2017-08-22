@@ -10,9 +10,9 @@ const paths = {
 
 gulp.task('image', function () {
     
-    var files = argv['batch'].split(' ').filter(f => !!f);
+    var files = argv['batch'].split(' ').filter(f => !!f && !/\/$/.test(f)).map(f => './queue/' + f);
     // console.log(files);
-    gulp.src(files, { cwd : './queue/' })
+    gulp.src(files, {base: './queue/'})
         .pipe(image({
             // pngquant: true,
             // optipng: false,
@@ -25,7 +25,7 @@ gulp.task('image', function () {
             // svgo: true,
             concurrent: 2
         }))
-        .pipe(gulp.dest(paths.dst));
+        .pipe(gulp.dest(paths.dst), {flatten: false});
 });
 
 gulp.task('clean', function(){
